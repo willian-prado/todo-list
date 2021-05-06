@@ -26,3 +26,7 @@ button {
   font: bold;
   text-align: center;
 }
+
+.marked {
+  background-color: rgb(128, 128, 128);
+}
