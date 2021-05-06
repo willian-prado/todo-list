@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto To-Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
     <header id = "header-container"> 
         <h1> Minha Lista de Tarefas </h1>
         <p id = "funcionamento"> Clique duas vezes em um item para marcá-lo como completo </p>
     </header>
 
     <section id = "button-container">
-        <input id="texto-tarefa" > 
+        <input id="texto-tarefa" >
+        <button id="criar-tarefa" class = "button"> Adicionar </button>
     </section>
 
     <section id = "list-container">
         <ol id="lista-tarefas"></ol>
     </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
