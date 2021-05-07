@@ -4,6 +4,8 @@ const input = document.getElementById('texto-tarefa');
 const olListaTarefas = document.getElementById('lista-tarefas');
 const buttonLimparSelecionado = document.getElementById('remover-selecionado');
 const buttonLimparCompletos = document.getElementById('remover-finalizados');
+const buttonAcima = document.getElementById('mover-cima');
+const buttonAbaixo = document.getElementById('mover-baixo');
 
 function addBackground(event) {
   const marked = document.querySelector('.marked');
@@ -71,3 +73,23 @@ function removeCompletos() {
 }
 
 buttonLimparCompletos.addEventListener('click', removeCompletos);
+
+function moveAcima() {
+  const item = document.querySelector('.marked');
+
+  if (item.previousElementSibling) {
+    item.parentElement.insertBefore(item, item.previousElementSibling);
+  }
+}
+
+buttonAcima.addEventListener('click', moveAcima);
+
+function moveAbaixo() {
+  const item = document.querySelector('.marked');
+
+  if (item.nextElementSibling) {
+    item.parentElement.insertBefore(item.nextElementSibling, item);
+  }
+}
+
+buttonAbaixo.addEventListener('click', moveAbaixo);
