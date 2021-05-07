@@ -27,6 +27,15 @@ button {
   text-align: center;
 }
 
+#apaga-tudo {
+  width: 100px;
+  background-color: crimson;
+}
+
 .marked {
   background-color: rgb(128, 128, 128);
+}
+
+.completed {
+  text-decoration: line-through;
 }
