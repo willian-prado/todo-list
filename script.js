@@ -2,6 +2,7 @@ const buttonCriarTarefa = document.getElementById('criar-tarefa');
 const buttonLimparLista = document.getElementById('apaga-tudo');
 const input = document.getElementById('texto-tarefa');
 const olListaTarefas = document.getElementById('lista-tarefas');
+const buttonLimparSelecionado = document.getElementById('remover-finalizados');
 
 function addBackground(event) {
   const marked = document.querySelector('.marked');
@@ -42,3 +43,13 @@ function limparLista() {
 }
 
 buttonLimparLista.addEventListener('click', limparLista);
+
+function removeSelecionado(event) {
+  const marked = document.querySelector('.marked');
+
+  if (marked) {
+    olListaTarefas.removeChild(marked);
+  }
+}
+
+buttonLimparSelecionado.addEventListener('click', removeSelecionado);
