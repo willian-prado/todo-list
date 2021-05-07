@@ -2,12 +2,16 @@ const buttonCriarTarefa = document.getElementById('criar-tarefa');
 const buttonLimparLista = document.getElementById('apaga-tudo');
 const input = document.getElementById('texto-tarefa');
 const olListaTarefas = document.getElementById('lista-tarefas');
-const buttonLimparSelecionado = document.getElementById('remover-finalizados');
+const buttonLimparSelecionado = document.getElementById('remover-selecionado');
+const buttonLimparCompletos = document.getElementById('remover-finalizados');
 
 function addBackground(event) {
   const marked = document.querySelector('.marked');
+  const item = event.target;
 
-  if (marked) {
+  if (item.classList.contains('marked')) {
+    item.classList.remove('marked');
+  } else if (marked) {
     marked.classList.remove('marked');
     event.target.classList.add('marked');
   } else {
@@ -44,7 +48,7 @@ function limparLista() {
 
 buttonLimparLista.addEventListener('click', limparLista);
 
-function removeSelecionado(event) {
+function removeSelecionado() {
   const marked = document.querySelector('.marked');
 
   if (marked) {
@@ -53,3 +57,17 @@ function removeSelecionado(event) {
 }
 
 buttonLimparSelecionado.addEventListener('click', removeSelecionado);
+
+function removeCompletos() {
+  const completos = document.querySelectorAll('.completed');
+
+  if (completos.length === 0) {
+    alert('Nenhuma tarefa foi marcada como completa.');
+  } else {
+    for (let index = 0; index < completos.length; index += 1) {
+      olListaTarefas.removeChild(completos[index]);
+    }
+  }
+}
+
+buttonLimparCompletos.addEventListener('click', removeCompletos);

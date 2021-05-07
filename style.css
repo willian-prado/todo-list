@@ -35,10 +35,16 @@ button {
   width: 110px;
   background-color: crimson;
 }
+#remover-selecionado {
+  width: 170px;
+  height: 20px;
+  background-color: purple;
+}
+
 #remover-finalizados {
   width: 170px;
   height: 20px;
-  background-color: blueviolet;
+  background-color: blue;
 }
 
 .marked {
