@@ -1,26 +1,20 @@
-const buttonCriarTarefa = document.getElementById('criar-tarefa');
-const buttonLimparLista = document.getElementById('apaga-tudo');
-const input = document.getElementById('texto-tarefa');
-const olListaTarefas = document.getElementById('lista-tarefas');
-const buttonLimparSelecionado = document.getElementById('remover-selecionado');
-const buttonLimparCompletos = document.getElementById('remover-finalizados');
-const buttonAcima = document.getElementById('mover-cima');
-const buttonAbaixo = document.getElementById('mover-baixo');
-const buttonSave = document.getElementById('salvar-tarefas');
-
-olListaTarefas.innerHTML = localStorage.getItem('list');
+const buttonCriarTarefa = document.querySelector('#criar-tarefa');
+const buttonLimparLista = document.querySelector('#apaga-tudo');
+const input = document.querySelector('#texto-tarefa');
+const olListaTarefas = document.querySelector('#lista-tarefas');
+const buttonLimparSelecionado = document.querySelector('#remover-selecionado');
+const buttonLimparCompletos = document.querySelector('#remover-finalizados');
+const buttonAcima = document.querySelector('#mover-cima');
+const buttonAbaixo = document.querySelector('#mover-baixo');
+const buttonSave = document.querySelector('#salvar-tarefas');
 
 function addBackground(event) {
-  const marked = document.querySelector('.marked');
-  const item = event.target;
-
-  if (item.classList.contains('marked')) {
-    item.classList.remove('marked');
-  } else if (marked) {
-    marked.classList.remove('marked');
-    event.target.classList.add('marked');
+  const selected = document.querySelector('.selected');
+  if (selected) {
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');
   } else {
-    event.target.classList.add('marked');
+    event.target.classList.add('selected');
   }
 }
 
@@ -54,10 +48,10 @@ function limparLista() {
 buttonLimparLista.addEventListener('click', limparLista);
 
 function removeSelecionado() {
-  const marked = document.querySelector('.marked');
+  const selected = document.querySelector('.selected');
 
-  if (marked) {
-    olListaTarefas.removeChild(marked);
+  if (selected) {
+    olListaTarefas.removeChild(selected);
   } else {
     alert('Nenhuma tarefa selecionada');
   }
@@ -79,36 +73,46 @@ function removeCompletos() {
 
 buttonLimparCompletos.addEventListener('click', removeCompletos);
 
-function moveAcima() {
-  const item = document.querySelector('.marked');
-
-  if (item) {
-    if (item.previousElementSibling) {
-      item.parentElement.insertBefore(item, item.previousElementSibling);
-    }
-  } else {
-    alert('Nenhum item selecionado');
-  }
-}
-
-buttonAcima.addEventListener('click', moveAcima);
-
-function moveAbaixo() {
-  const item = document.querySelector('.marked');
-
-  if (item) {
-    if (item.nextElementSibling) {
-      item.parentElement.insertBefore(item.nextElementSibling, item);
-    }
-  } else {
-    alert('Nenhum item selecionado');
-  }
-}
-
-buttonAbaixo.addEventListener('click', moveAbaixo);
-
 function saveList() {
   localStorage.setItem('list', olListaTarefas.innerHTML);
 }
 
 buttonSave.addEventListener('click', saveList);
+
+if (localStorage.getItem('list')) {
+  olListaTarefas.innerHTML = localStorage.getItem('list');
+  const tarefas = olListaTarefas.children;
+  for (let index = 0; index < tarefas.length; index += 1) {
+    tarefas[index].addEventListener('click', addBackground);
+    tarefas[index].addEventListener('dblclick', addDecoration);
+  }
+}
+
+//  Fonte: https://stackoverflow.com/questions/34913953/move-an-element-one-place-up-or-down-in-the-dom-tree-with-javascript
+function moveAcima() {
+  const selected = document.querySelector('.selected');
+  console.log(selected);
+
+  if (selected === null) {
+    alert('Nenhuma tarefa foi selecionada!');
+  } else if (selected.previousSibling) {
+    const parent = selected.parentNode;
+    parent.insertBefore(selected, selected.previousSibling);
+  }
+}
+
+// Fonte: https://stackoverflow.com/questions/34913953/move-an-element-one-place-up-or-down-in-the-dom-tree-with-javascript
+function moveAbaixo() {
+  const selected = document.querySelector('.selected');
+  console.log(selected);
+
+  if (selected === null) {
+    alert('Nenhuma tarefa foi selecionada!');
+  } else if (selected.nextSibling) {
+    const parent = selected.parentNode;
+    parent.insertBefore(selected.nextSibling, selected);
+  }
+}
+
+buttonAbaixo.addEventListener('click', moveAbaixo);
+buttonAcima.addEventListener('click', moveAcima);
