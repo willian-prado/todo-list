@@ -61,12 +61,3 @@ tarefas finalizadas, limpar tarefas concluídas e salvar a lista de tarefas no l
     * Habitue-se a pensar nos casos especiais ao construir programas. O que acontece se o usuário tentar mover o primeiro item para cima ou o último para baixo?        Note que caso se tente subir o elemento no topo da lista ou, caso se tente descer o último elemento da lista, esta não deve ser alterada.
 
 **14 - Adicione um botão com id="remover-selecionado" que, quando clicado, remove o item selecionado**
-
----
-
-## Dicas
-
-- Para colocar sua página no [GitHub Pages](https://pages.github.com/), não é necessário remover o conteúdo que já está lá, você pode apenas adicionar essa nova página. Para isso, todo o conteúdo desse projeto deve ser colocado em uma pasta `/projetos/todo-list`.
-
-- **Lembre-se:** tirar 100% do avaliador não é o fim do trabalho! Customize-o, estilize-o, acrescente-o ao seu portfólio!
-
