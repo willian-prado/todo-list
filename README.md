@@ -1,7 +1,10 @@
 ### Projeto Todo List
 
-Quarto projeto do módulo de Fundamentos do curso de desenvolvimento web da Trybe. \
-Similarmente ao projeto Pixels Art, foi realizado para integrar os conhecimentos de HTML, CSS e JavaScript.
+> Quarto projeto do módulo de Fundamentos do curso de desenvolvimento web da Trybe.
+
+**Contexto**
+
+Com propósito similar ao do projeto Pixels Art, esse trabalho foi realizado para integrar os conhecimentos de HTML, CSS e JavaScript.
 
 **Objetivo do projeto**
 
@@ -14,9 +17,14 @@ tarefas finalizadas, limpar tarefas concluídas e salvar a lista de tarefas no l
 - Criação de `event listeners` que permitem a interação com elementos da página;
 - Utilizar funções e métodos da linguagem JavaScript;
 
+**Tecnologias utilizadas**
+- <a href="https://www.w3.org/html/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" title="HTML5" title="HTML" align="center" height="35" /> - HTML </a>
+- <a href="https://www.w3schools.com/css/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" title="CCS3" title="CSS" align="center" height="35"/> - CSS </a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" title="JavaScript" align="center" height="30"/>  - JavaScript</a>
+
 ---
 
-### Lista de requisitos propostos:
+### Lista de requisitos propostos pela Trybe:
 
 #### Obrigatórios
 
