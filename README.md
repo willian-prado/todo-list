@@ -1,6 +1,6 @@
 ### Projeto Todo List
 
-> Quarto projeto do módulo de Fundamentos do curso de desenvolvimento web da Trybe.
+> Quarto projeto do módulo de Fundamentos do curso de desenvolvimento web da [Trybe](https://www.betrybe.com/)
 
 **Contexto**
 
@@ -11,7 +11,7 @@ Com propósito similar ao do projeto Pixels Art, esse trabalho foi realizado par
 Implementar uma página web que corresponde a uma lista de tarefas. Os usuários devem poder adicionar e remover tarefas, marcar 
 tarefas finalizadas, limpar tarefas concluídas e salvar a lista de tarefas no localStorage.
 
-**Principais habilidades desenvolvidas nesse trabalho:**
+**Principais habilidades desenvolvidas nesse trabalho**
 
 - Manipulação do DOM, usando seletores como `getElementById`, `getElementsByTagName`, `querySelector` e `querySelectorAll`;
 - Criação de `event listeners` que permitem a interação com elementos da página;
@@ -69,3 +69,8 @@ tarefas finalizadas, limpar tarefas concluídas e salvar a lista de tarefas no l
     * Habitue-se a pensar nos casos especiais ao construir programas. O que acontece se o usuário tentar mover o primeiro item para cima ou o último para baixo?        Note que caso se tente subir o elemento no topo da lista ou, caso se tente descer o último elemento da lista, esta não deve ser alterada.
 
 **14 - Adicione um botão com id="remover-selecionado" que, quando clicado, remove o item selecionado**
+
+---
+
+[Ir para a lista de projetos](https://github.com/willian-prado/trybe-records)
+
